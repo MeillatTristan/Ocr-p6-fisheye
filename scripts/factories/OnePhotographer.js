@@ -83,7 +83,7 @@ export default class OnePhotographer {
    * Function fetch one photographer with his id
    */
   async getPhotographer() {
-    const response = await fetch('../../data/photographers.json');
+    const response = await fetch('./data/photographers.json');
     const res = await response.json();
     const id = this.getIdUrl();
     res.photographers.forEach((photographer) => {
