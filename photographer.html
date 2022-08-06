@@ -5,16 +5,30 @@
     <meta charset="utf-8">
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
+    <script src="node_modules/fa.js"></script>
     <title>Fisheye - photographe </title>
   </head>
   <body>
     <header>
-      <img src="assets/images/logo.png" class="logo" />
+      <a href="index.html"><img src="assets/images/logo.png" class="logo" /></a>
     </header>
     <main id="main">
       <div class="photograph-header">
-        <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+        <div class="containerInfo"></div>
+        <div class="containerButton">
+          <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+        </div>
+        <div class="containerImg"></div>
       </div>
+  <div class="containerFilter">
+        <h3>Filtrer par :</h3>
+        <select name="" id="filtre">
+          <option id="titre" value="title">Titre</option>
+          <option id="date" value="date">Date</option>
+          <option id="popular" value="likes">Popularité</option>
+        </select>
+      </div>
+      <div class="containerMedias"></div>
     </main>
     <div id="contact_modal">
 			<div class="modal">
@@ -24,13 +38,38 @@
         </header>
 				<form>
 					<div>
-						<label>Prénom</label>
-						<input />
+						<div class="formGroup">
+              <label for="firstname">Prénom</label>
+						  <input type="text" name="firstname" id="firstname">
+            </div>
+            <div class="formGroup">
+              <label for="lastname">Nom</label>
+						  <input type="text" name="lastname" id="lastname">
+            </div>
+            <div class="formGroup">
+              <label for="email">Email</label>
+						  <input type="email" name="email" id="email">
+            </div>
+            <div class="formGroup">
+              <label for="message">Message</label>
+						  <textarea name="message" id="message" cols="30" rows="10"></textarea>
+            </div>
 					</div>
           <button class="contact_button">Envoyer</button>
 				</form>
 			</div>
 		</div>
+    <div class="lightbox">
+      <img id="imgLightbox" src="" alt="">
+      <video id="videoLightbox" src="" autoplay loop></video>
+      <h3 id="titleLightbox" class="title"></h3>
+      <div class="nav">
+        <span id="prevLightbox" class="prev"><i class="fa-solid fa-angle-left"></i></span>
+        <span id="nextLightbox" class="next"><i class="fa-solid fa-angle-right"></i></span>
+      </div>
+      <span id="closeLightbox" class="close"><i class="fa-regular fa-xmark"></i></span>
+    </div>
+    <script type="module" src="scripts/pages/photographer.js"></script>
     <script src="/scripts/utils/contactForm.js"></script>
   </body>
 </html>

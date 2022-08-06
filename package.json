@@ -1,0 +1,26 @@
+{
+  "name": "fisheye",
+  "version": "1.0.0",
+  "description": "openclassrooms projet",
+  "main": "index.js",
+  "dependencies": {
+    "eslint": ">=5.16.0",
+    "npm": "^8.15.0"
+  },
+  "devDependencies": {
+    "eslint-config-google": "^0.14.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MeillatTristan/Ocr-p5-fisheye.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MeillatTristan/Ocr-p5-fisheye/issues"
+  },
+  "homepage": "https://github.com/MeillatTristan/Ocr-p5-fisheye#readme"
+}
