@@ -15,7 +15,7 @@ export default class AllPhotographers {
    * @return {Array}
    */
   async getPhotographers() {
-    const response = await fetch('../../data/photographers.json');
+    const response = await fetch('./data/photographers.json');
     const res = await response.json();
     this.data = res.photographers;
     this.displayData();
