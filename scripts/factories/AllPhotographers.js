@@ -45,7 +45,7 @@ export default class AllPhotographers {
     const article = document.createElement('article');
 
     const link = document.createElement('a');
-    link.href = `/photographer.html?id=${id}`;
+    link.href = `photographer.html?id=${id}`;
 
     const picture = `assets/photographers/${portrait}`;
     const containerImg = document.createElement('div');
