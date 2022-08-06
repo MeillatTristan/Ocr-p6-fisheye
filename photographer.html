@@ -21,7 +21,7 @@
         <div class="containerImg"></div>
       </div>
   <div class="containerFilter">
-        <h3>Filtrer par :</h3>
+        <label for="filtre">Filtrer par :</label>
         <select name="" id="filtre">
           <option id="titre" value="title">Titre</option>
           <option id="date" value="date">Date</option>
@@ -34,7 +34,7 @@
 			<div class="modal">
 				<header>
           <h2>Contactez-moi</h2>
-          <img src="assets/icons/close.svg" onclick="closeModal()" />
+          <img src="assets/icons/close.svg" onclick="closeModal()" alt="close contact"/>
         </header>
 				<form>
 					<div>
@@ -64,10 +64,10 @@
       <video id="videoLightbox" src="" autoplay loop></video>
       <h3 id="titleLightbox" class="title"></h3>
       <div class="nav">
-        <span id="prevLightbox" class="prev"><i class="fa-solid fa-angle-left"></i></span>
-        <span id="nextLightbox" class="next"><i class="fa-solid fa-angle-right"></i></span>
+        <span id="prevLightbox" class="prev"><strong class="fa-solid fa-angle-left"></strong></span>
+        <span id="nextLightbox" class="next"><strong class="fa-solid fa-angle-right"></strong></span>
       </div>
-      <span id="closeLightbox" class="close"><i class="fa-regular fa-xmark"></i></span>
+      <span id="closeLightbox" class="close"><strong class="fa-regular fa-xmark"></strong></span>
     </div>
     <script type="module" src="scripts/pages/photographer.js"></script>
     <script src="scripts/utils/contactForm.js"></script>
