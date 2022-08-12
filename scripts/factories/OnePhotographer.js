@@ -178,8 +178,16 @@ export default class OnePhotographer {
       const urlMedia = `assets/medias/${media.image}`;
       const mediaElement = document.createElement('img');
       mediaElement.dataset.index = index;
+      mediaElement.setAttribute('tabindex', 0);
       mediaElement.addEventListener('click', (e) => {
         this.displayLightbox(e);
+      });
+      mediaElement.addEventListener('focus', () => {
+        mediaElement.addEventListener('keydown', (e) => {
+          if (e.code == 'Enter') {
+            this.displayLightbox(e);
+          }
+        });
       });
       mediaElement.setAttribute('src', urlMedia);
       mediaElement.setAttribute('alt', media.title);
@@ -203,6 +211,7 @@ export default class OnePhotographer {
     titleCard.textContent= media.title;
 
     const like = document.createElement('span');
+    like.setAttribute('tabindex', 0);
     like.classList.add('like');
     like.innerHTML = `${media.likes} <i class="fa-regular fa-heart"></i>`;
 
@@ -218,6 +227,24 @@ export default class OnePhotographer {
         like.innerHTML = `${media.likes} <i class="fa-regular fa-heart"></i>`;
       };
       this.displayLikes();
+    });
+
+    like.addEventListener('focus', () => {
+      like.addEventListener('keydown', (event) => {
+        if (event.code == 'Enter') {
+          like.classList.toggle('active');
+          if (like.classList.contains('active')) {
+            media.likes += 1;
+            this.likes += 1;
+            like.innerHTML = `${media.likes} <i class="fa-solid fa-heart"></i>`;
+          } else {
+            media.likes -= 1;
+            this.likes -= 1;
+            like.innerHTML = `${media.likes} <i class="fa-regular fa-heart"></i>`;
+          };
+          this.displayLikes();
+        }
+      });
     });
 
     containerText.appendChild(titleCard);
