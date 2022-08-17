@@ -240,7 +240,10 @@ export default class OnePhotographer {
           } else {
             media.likes -= 1;
             this.likes -= 1;
-            like.innerHTML = `${media.likes} <i class="fa-regular fa-heart"></i>`;
+            like.innerHTML = `
+              ${media.likes} 
+              <i class="fa-regular fa-heart"></i>`
+            ;
           };
           this.displayLikes();
         }
