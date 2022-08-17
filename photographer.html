@@ -36,23 +36,27 @@
           <h2>Contactez-moi</h2>
           <img src="assets/icons/close.svg" onclick="closeModal()" alt="close contact"/>
         </header>
-				<form>
+				<form id="contactForm" action="" method="post">
 					<div>
 						<div class="formGroup">
               <label for="firstname">Prénom</label>
-						  <input type="text" name="firstname" id="firstname">
+              <span class="error" id="errorFirst"></span>
+						  <input required type="text" name="firstname" id="firstname">
             </div>
             <div class="formGroup">
               <label for="lastname">Nom</label>
-						  <input type="text" name="lastname" id="lastname">
+              <span class="error" id="errorLast"></span>
+						  <input required type="text" name="lastname" id="lastname">
             </div>
             <div class="formGroup">
               <label for="email">Email</label>
-						  <input type="email" name="email" id="email">
+              <span class="error" id="errorEmail"></span>
+						  <input required type="email" name="email" id="email">
             </div>
             <div class="formGroup">
               <label for="message">Message</label>
-						  <textarea name="message" id="message" cols="30" rows="10"></textarea>
+              <span class="error" id="errorMessage"></span>
+						  <textarea required name="message" id="message" cols="30" rows="10"></textarea>
             </div>
 					</div>
           <button class="contact_button">Envoyer</button>
